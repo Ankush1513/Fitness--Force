@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Analysis Result</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+<main>
+<h1>Analysis Result</h1>
+
+<p><strong>Overall (majority):</strong> {{ top_label }}</p>
+
+{% if predictions and predictions|length > 0 %}
+<h2>Per-window predictions</h2>
+<table>
+<thead>
+<tr>
+<th>Window start frame</th>
+<th>Prediction</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+{% for p in predictions %}
+<tr>
+  <td>{{ p.start }}</td>
+  <td>{{ p.label }}</td>
+  <td>{{ p.conf | float | round(2) }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>No pose detected or no windows produced.</p>
+{% endif %}
+
+<p><a href="/">Analyze another video</a></p>
+</main>
+</body>
+</html>

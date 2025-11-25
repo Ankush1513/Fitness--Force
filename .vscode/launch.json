@@ -1,0 +1,33 @@
+{
+"version": "0.2.0",
+"configurations": [
+{
+"name": "Python: Run Flask app",
+"type": "python",
+"request": "launch",
+"program": "${workspaceFolder}/webapp/app.py",
+"console": "integratedTerminal",
+"args": [],
+"cwd": "${workspaceFolder}",
+"env": {
+"FLASK_ENV": "development"
+}
+},
+{
+"name": "Python: Run Preprocess",
+"type": "python",
+"request": "launch",
+"program": "${workspaceFolder}/src/preprocess.py",
+"console": "integratedTerminal",
+"cwd": "${workspaceFolder}"
+},
+{
+"name": "Python: Train Model",
+"type": "python",
+"request": "launch",
+"program": "${workspaceFolder}/src/train.py",
+"console": "integratedTerminal",
+"cwd": "${workspaceFolder}"
+}
+]
+}

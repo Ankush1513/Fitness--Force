@@ -1,0 +1,18 @@
+{
+"version": "2.0.0",
+"tasks": [
+{
+"label": "Install Requirements",
+"type": "shell",
+"command": "python -m pip install -r requirements.txt",
+"problemMatcher": []
+},
+{
+"label": "Run Preprocess",
+"type": "shell",
+"command": "python src/preprocess.py",
+"group": "build",
+"problemMatcher": []
+},
+{
+"label": "Train Model"

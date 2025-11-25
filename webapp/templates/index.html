@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Pose Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 20px;
+      width: 95%;
+      max-width: 560px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);} 
+      to {opacity: 1; transform: translateY(0);} 
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    input[type="file"], select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 10px;
+      border: none;
+      background: #334155;
+      color: #e2e8f0;
+      outline: none;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 12px;
+      color: #0f172a;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .tips {
+      margin-top: 40px;
+    }
+
+    .tips h2 {
+      font-size: 18px;
+      color: #38bdf8;
+    }
+
+    .tips ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <nav style="width:100%; display:flex; justify-content:center; position:fixed; top:0; left:0; z-index:20; backdrop-filter: blur(12px); background: rgba(255,255,255,0.08); padding:18px 0; border-radius:0; box-shadow:0 4px 20px rgba(0,0,0,0.25);"">
+    <div style="padding:0; border-radius:40px; backdrop-filter: blur(12px); background: rgba(255,255,255,0.08); box-shadow:0 0 25px rgba(255,255,255,0.08);">
+      <ul style="list-style:none; margin:0; padding:8px 25px; display:flex; gap:25px; background:rgba(255,255,255,0.15); border-radius:40px; align-items:center; backdrop-filter:blur(20px); box-shadow:0 4px 30px rgba(0,0,0,0.2);">
+        <li style="padding:10px 22px; border-radius:30px; background:rgba(255,255,255,0.45); font-weight:600; color:#0f172a; box-shadow:0 2px 6px rgba(0,0,0,0.15);">Home</li>
+        <li style="padding:10px 22px; border-radius:30px; cursor:pointer; color:#e2e8f0; transition:0.3s;">About Us</li>
+      </ul>
+    </div>
+  </nav>
+  <div style="height:140px;"></div>
+  <div class="container">
+    <h1>Fitness Force</h1>
+    <p>Upload your workout video to analyze form for exercises like Squat, Pushup, Lunge and Plank.</p>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+      <label for="file">Choose video file (mp4):</label>
+      <input type="file" id="file" name="file" accept="video/*" required />
+
+      <label for="exercise">Exercise (optional):</label>
+      <select id="exercise" name="exercise">
+        <option value="">(Detect automatically)</option>
+        <option value="pushup">Push Up</option>
+        <option value="squat">Squat</option>
+        <option value="lunge">Lunge</option>
+        <option value="plank">Plank</option>
+      </select>
+
+      <button type="submit">Analyze</button>
+    </form>
+
+    <div class="tips">
+      <h2>Quick Tips</h2>
+      <ul>
+        <li>Use a stable camera angle.</li>
+        <li>Ensure the full body is in frame.</li>
+        <li>Good lighting improves pose detection.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer style="margin-top:auto; width:100%; text-align:center; font-size:13px; color:#94a3b8; padding:25px 0; border-top:1px solid #334155;">
+    <p>Connect with us:</p>
+    <div style="margin:10px 0;">
+      <a href="#" style="margin:0 10px; color:#38bdf8; text-decoration:none;">Instagram</a>
+      <a href="#" style="margin:0 10px; color:#38bdf8; text-decoration:none;">Twitter</a>
+      <a href="#" style="margin:0 10px; color:#38bdf8; text-decoration:none;">LinkedIn</a>
+    </div>
+    <p>Feedback / Contact:</p>
+    <p>Name: Ankush — Email: FitForce.support@example.com </p>
+  </footer>
+</body>
+</html>
