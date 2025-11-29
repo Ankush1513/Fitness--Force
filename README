@@ -1,0 +1,22 @@
+📌 Fitness Force — AI Exercise Form Detection
+
+Fitness Force is an AI-powered fitness form correction system that analyzes workout videos and detects whether exercises are performed correctly or incorrectly. It supports Squat, Bicep Curl, Lunge, and Plank using pose estimation and deep learning.
+
+
+🚀 Features
+
+MediaPipe Pose (33 landmarks) for pose extraction
+107-feature biomechanical representation (coords + angles)
+60-frame sliding windows
+CNN + GRU hybrid deep-learning model
+Detects correct form & specific mistakes
+Flask web app for video upload and results
+Works on any camera or pre-recorded videos
+
+
+🧠 Model Overview
+
+CNN + GRU Hybrid
+CNN → local movement patterns (elbow/hip/knee motion)
+GRU → long-term sequence understanding (full rep behavior)
+Dense layers → classify correct vs incorrect form
